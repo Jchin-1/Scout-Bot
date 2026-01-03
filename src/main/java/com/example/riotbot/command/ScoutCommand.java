@@ -185,7 +185,7 @@ public class ScoutCommand {
                                                                                                                                 + " Using Stats from Latest Match ("
                                                                                                                                 + latestMatch.metadata()
                                                                                                                                                 .matchId()
-                                                                                                                                + ")");
+                                                                                                                                                + ")");
 
                                                                                                 // Directly use the latestMatch
                                                                                                 // we found in Step 2!
@@ -198,10 +198,6 @@ public class ScoutCommand {
                                                                                                                                 if (p.puuid().equals(
                                                                                                                                                 account.puuid())) {
                                                                                                                                         foundParticipant = p;
-                                                                                                                                        System.out.println(
-                                                                                                                                                        "DEBUG - Found User (Champion: "
-                                                                                                                                                                        + p.championName()
-                                                                                                                                                                        + ")");
                                                                                                                                         break;
                                                                                                                                 }
                                                                                                                         }
@@ -212,62 +208,61 @@ public class ScoutCommand {
                                                                                                                                                                 "User not found in match participants"));
                                                                                                                         }
 
-                                                                                                                        String winLoss = foundParticipant
-                                                                                                                                        .win() ? "Win"
-                                                                                                                                                        : "Loss";
-                                                                                                                        String kda = foundParticipant
-                                                                                                                                        .kills()
-                                                                                                                                        + "/"
-                                                                                                                                        + foundParticipant
-                                                                                                                                                        .deaths()
-                                                                                                                                        + "/"
-                                                                                                                                        + foundParticipant
-                                                                                                                                                        .assists();
-                                                                                                                        String champ = foundParticipant
-                                                                                                                                        .championName();
+                                                                                                                        // Prepare Data for Embed
+                                                                                                                        String gameMode = lastMatchDto.info().gameMode();
+                                                                                                                        boolean won = foundParticipant.win();
+                                                                                                                        String winLossText = won ? "VICTORY" : "DEFEAT";
+                                                                                                                        discord4j.rest.util.Color embedColor = won ? discord4j.rest.util.Color.GREEN : discord4j.rest.util.Color.RED;
+                                                                                                                        
+                                                                                                                        String championName = foundParticipant.championName();
+                                                                                                                        // Handle spaces in champion name for URL (e.g. Lee Sin -> LeeSin)
+                                                                                                                        String championUrlName = championName.replace(" ", "");
+                                                                                                                        String thumbUrl = "https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/" + championUrlName + ".png";
+                                                                                                                        
+                                                                                                                        // Identity (Author)
+                                                                                                                        String authorName = finalGameName + " #" + finalTagLine;
+                                                                                                                        int profileIconId = foundParticipant.profileIcon();
+                                                                                                                        String profileIconUrl = "https://ddragon.leagueoflegends.com/cdn/14.1.1/img/profileicon/" + profileIconId + ".png";
+
+                                                                                                                        // Stats
+                                                                                                                        String kda = foundParticipant.kills() + "/" + foundParticipant.deaths() + "/" + foundParticipant.assists();
+                                                                                                                        int totalCS = foundParticipant.totalMinionsKilled() + foundParticipant.neutralMinionsKilled();
+                                                                                                                        int gold = foundParticipant.goldEarned();
+                                                                                                                        int damage = foundParticipant.totalDamageDealtToChampions();
+                                                                                                                        int damageTaken = foundParticipant.totalDamageTaken();
+                                                                                                                        int vision = foundParticipant.visionScore();
 
                                                                                                                         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
-                                                                                                                                        .ofPattern("MM/dd/yyyy HH:mm")
-                                                                                                                                        .withZone(java.time.ZoneId
-                                                                                                                                                        .systemDefault());
-                                                                                                                        String matchDate = formatter
-                                                                                                                                        .format(Instant.ofEpochMilli(
-                                                                                                                                                        lastMatchDto.info()
-                                                                                                                                                                        .gameEndTimestamp()));
+                                                                                                                                        .ofPattern("MM/dd/yyyy")
+                                                                                                                                        .withZone(java.time.ZoneId.systemDefault());
+                                                                                                                        String matchDate = formatter.format(Instant.ofEpochMilli(lastMatchDto.info().gameEndTimestamp()));
 
-                                                                                                                        String lastGameMsg = String
-                                                                                                                                        .format("📊 **Last Game (Played: %s):** %s as **%s** (%s)",
-                                                                                                                                                        matchDate,
-                                                                                                                                                        winLoss,
-                                                                                                                                                        champ,
-                                                                                                                                                        kda);
+                                                                                                                        // Build Embed
+                                                                                                                        EmbedCreateSpec embed = EmbedCreateSpec.builder()
+                                                                                                                            .author(authorName, null, profileIconUrl)
+                                                                                                                            .title(winLossText + " in " + gameMode)
+                                                                                                                            .color(embedColor)
+                                                                                                                            .thumbnail(thumbUrl)
+                                                                                                                            .description("Played as **" + championName + "**")
+                                                                                                                            .addField("⚔️ Combat", 
+                                                                                                                                "KDA: " + kda + "\n" +
+                                                                                                                                "Dmg Dealt: " + String.format("%,d", damage) + "\n" +
+                                                                                                                                "Dmg Taken: " + String.format("%,d", damageTaken), true)
+                                                                                                                            .addField("🚜 Farming & Gold", 
+                                                                                                                                "CS: " + totalCS + "\n" +
+                                                                                                                                "Gold: " + String.format("%,d", gold), true)
+                                                                                                                            .addField("👀 Vision", 
+                                                                                                                                "Vision Score: " + vision, true)
+                                                                                                                            .footer("Scout Bot • " + matchDate, null)
+                                                                                                                            .build();
 
-                                                                                                                        return event.editReply(
-                                                                                                                                        "⚠️ **" + finalGameName
-                                                                                                                                                        + " #"
-                                                                                                                                                        + finalTagLine
-                                                                                                                                                        + "** ("
-                                                                                                                                                        + rank
-                                                                                                                                                        + ")\n"
-                                                                                                                                                        + errorMsg
-                                                                                                                                                        + "\n\n"
-                                                                                                                                                        + lastGameMsg)
-                                                                                                                                        .then();
+                                                                                                                        return event.editReply(discord4j.core.spec.InteractionReplyEditSpec.create()
+                                                                                                                            .withContent(errorMsg) // Keep the context message (e.g. "User not in game")
+                                                                                                                            .withEmbeds(embed))
+                                                                                                                            .then();
                                                                                                                 })
-                                                                                                                .onErrorResume(ex -> event
-                                                                                                                                .editReply("⚠️ **"
-                                                                                                                                                + finalGameName
-                                                                                                                                                + " #"
-                                                                                                                                                + finalTagLine
-                                                                                                                                                + "** ("
-                                                                                                                                                + rank
-                                                                                                                                                + ")\n"
-                                                                                                                                                + errorMsg
-                                                                                                                                                + "\n\n"
-                                                                                                                                                + "ℹ️ Last Match ID: "
-                                                                                                                                                + latestMatch.metadata()
-                                                                                                                                                                .matchId())
-                                                                                                                                .then());
+                                                                                                                .onErrorResume(ex -> event.editReply("⚠️ **" + finalGameName + " #" + finalTagLine + "**\n" + 
+                                                                                                                                                    "Error building stats: " + ex.getMessage()).then());
                                                                                         });
                                                                 });
                                         } catch (Exception e) {

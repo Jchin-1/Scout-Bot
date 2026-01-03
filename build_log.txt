@@ -1,0 +1,83 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:riotbot >-------------------------
+[INFO] Building riotbot 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ riotbot ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ riotbot ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 23] to target\classes
+[INFO] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java: C:\Users\singh\Documents\Riot Discord\src\main\java\com\example\riotbot\command\ScoutCommand.java uses or overrides a deprecated API.
+[INFO] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[204,36] cannot find symbol
+  symbol:   class SummonerDto
+  location: class com.example.riotbot.command.ScoutCommand.Step3Result
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[207,36] cannot find symbol
+  symbol:   class SummonerDto
+  location: class com.example.riotbot.command.ScoutCommand.Step4Result
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[82,73] cannot find symbol
+  symbol:   class SummonerDto
+  location: class com.example.riotbot.command.ScoutCommand
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[96,73] cannot find symbol
+  symbol:   class SummonerDto
+  location: class com.example.riotbot.command.ScoutCommand
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[96,107] cannot find symbol
+  symbol:   method summoner()
+  location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[97,107] cannot find symbol
+  symbol:   method latestMatch()
+  location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[98,98] cannot find symbol
+  symbol:   method rank()
+  location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[99,105] cannot find symbol
+  symbol:   method account()
+  location: variable step4Result of type java.lang.Object
+[INFO] 8 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.769 s
+[INFO] Finished at: 2026-01-03T00:19:44-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project riotbot: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[204,36] cannot find symbol
+[ERROR]   symbol:   class SummonerDto
+[ERROR]   location: class com.example.riotbot.command.ScoutCommand.Step3Result
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[207,36] cannot find symbol
+[ERROR]   symbol:   class SummonerDto
+[ERROR]   location: class com.example.riotbot.command.ScoutCommand.Step4Result
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[82,73] cannot find symbol
+[ERROR]   symbol:   class SummonerDto
+[ERROR]   location: class com.example.riotbot.command.ScoutCommand
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[96,73] cannot find symbol
+[ERROR]   symbol:   class SummonerDto
+[ERROR]   location: class com.example.riotbot.command.ScoutCommand
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[96,107] cannot find symbol
+[ERROR]   symbol:   method summoner()
+[ERROR]   location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[97,107] cannot find symbol
+[ERROR]   symbol:   method latestMatch()
+[ERROR]   location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[98,98] cannot find symbol
+[ERROR]   symbol:   method rank()
+[ERROR]   location: variable step4Result of type java.lang.Object
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[99,105] cannot find symbol
+[ERROR]   symbol:   method account()
+[ERROR]   location: variable step4Result of type java.lang.Object
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

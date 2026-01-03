@@ -30,7 +30,7 @@ public class BotStartupRunner implements CommandLineRunner {
         final String commandName = "scout";
         ApplicationCommandRequest scoutRequest = ApplicationCommandRequest.builder()
                 .name(commandName)
-                .description("Scout the enemy team in a live game")
+                .description("View recent League of Legends match stats and live game status.")
                 .addOption(ApplicationCommandOptionData.builder()
                         .name("gamename")
                         .description("Riot ID Game Name")
