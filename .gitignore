@@ -1,8 +1,16 @@
 target/
+<<<<<<< HEAD
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+.idea/
+*.iml
+.DS_Store
+=======
 logs/
 *.log
 tools/
 tools_old/
 .vscode/
 .idea/
+>>>>>>> 21a077ed4ef3f73981e81d5138c2daeb961bae81
 *.class

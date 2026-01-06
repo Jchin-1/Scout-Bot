@@ -18,6 +18,8 @@ public record MatchDto(Metadata metadata, Info info) {
             String riotIdTagline,
             String championName,
             int kills, int deaths, int assists,
+<<<<<<< HEAD
+=======
             int totalDamageDealtToChampions,
             int totalDamageTaken,
             int totalMinionsKilled,
@@ -25,6 +27,7 @@ public record MatchDto(Metadata metadata, Info info) {
             int goldEarned,
             int visionScore,
             int profileIcon,
+>>>>>>> 21a077ed4ef3f73981e81d5138c2daeb961bae81
             boolean win) {
     }
 }

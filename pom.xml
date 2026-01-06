@@ -14,7 +14,7 @@
     <name>riotbot</name>
     <description>Riot Scout Discord Bot</description>
     <properties>
-        <java.version>23</java.version>
+        <java.version>21</java.version>
         <discord4j.version>3.3.0</discord4j.version>
     </properties>
     <dependencies>
