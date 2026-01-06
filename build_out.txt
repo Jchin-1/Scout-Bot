@@ -1,0 +1,70 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:riotbot >-------------------------
+[INFO] Building riotbot 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ riotbot ---
+[INFO] Deleting C:\Users\singh\Documents\Riot Discord\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ riotbot ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ riotbot ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[224,42] ')' or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[224,43] 'catch' without 'try'
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[49,41] 'try' without 'catch', 'finally' or resource declarations
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[227,34] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[230,10] ')' or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[232,9] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[33,3] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[33,5] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[34,29] > or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,4] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,7] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,11] ';' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[119,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[119,13] > expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[120,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[134,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[134,49] <identifier> expected
+[INFO] 17 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.201 s
+[INFO] Finished at: 2026-01-05T22:15:45-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project riotbot: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[224,42] ')' or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[224,43] 'catch' without 'try'
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[49,41] 'try' without 'catch', 'finally' or resource declarations
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[227,34] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[230,10] ')' or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/command/ScoutCommand.java:[232,9] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[33,3] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[33,5] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[34,29] > or ',' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,4] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,7] illegal start of expression
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/listener/BotStartupRunner.java:[37,11] ';' expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[119,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[119,13] > expected
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[120,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[134,1] illegal start of type
+[ERROR] /C:/Users/singh/Documents/Riot Discord/src/main/java/com/example/riotbot/service/RiotClient.java:[134,49] <identifier> expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

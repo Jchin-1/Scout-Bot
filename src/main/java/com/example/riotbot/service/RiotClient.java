@@ -116,8 +116,6 @@ public class RiotClient {
                 .retrieve()
                 .bodyToFlux(com.example.riotbot.dto.LeagueEntryDto.class);
     }
-<<<<<<< HEAD
-=======
 
     public Mono<String> getLatestDDragonVersion() {
         return webClient.get()
@@ -131,5 +129,4 @@ public class RiotClient {
                     return clean.split(",")[0];
                 });
     }
->>>>>>> 21a077ed4ef3f73981e81d5138c2daeb961bae81
 }
